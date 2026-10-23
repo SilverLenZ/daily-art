@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#171713">
   <meta name="description" content="Daily digital art by Zack Covell. One original piece every day, with affordable prints and links to follow along.">
+  <link rel="icon" href="data:,">
   <title>Zack Covell — Daily Digital Art</title>
   <style>
     :root {
@@ -22,45 +23,45 @@
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { margin: 0; background: var(--bg); color: var(--ink); }
+    body { margin: 0; background: var(--bg); color: var(--ink); font-size: 18px; }
     a { color: inherit; }
     .shell { width: min(1320px, calc(100% - 64px)); margin: 0 auto; }
     .masthead { display: flex; align-items: center; justify-content: space-between; min-height: 84px; border-bottom: 1px solid var(--line); }
     .wordmark { display: flex; align-items: center; gap: 12px; text-decoration: none; }
     .sigil { display: grid; place-items: center; width: 38px; height: 38px; border: 1px solid #777153; border-radius: 50%; color: var(--lime); font: 20px var(--serif); }
-    .wordmark strong { font-family: var(--serif); font-size: 19px; font-weight: 500; letter-spacing: .015em; }
-    .wordmark small { display: block; margin-top: 3px; color: var(--muted); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; }
+    .wordmark strong { font-family: var(--serif); font-size: 21px; font-weight: 500; letter-spacing: .015em; }
+    .wordmark small { display: block; margin-top: 3px; color: var(--muted); font-size: 14px; letter-spacing: .12em; text-transform: uppercase; }
     .nav { display: flex; align-items: center; gap: 30px; }
-    .nav a { color: var(--muted); font-size: 13px; text-decoration: none; transition: color .2s; }
+    .nav a { color: var(--muted); font-size: 15px; text-decoration: none; transition: color .2s; }
     .nav a:hover { color: var(--lime); }
     .nav .nav-cta { padding: 11px 16px; border: 1px solid #69654b; border-radius: 999px; color: var(--lime); }
 
     .hero { display: grid; grid-template-columns: .82fr 1.18fr; gap: clamp(36px, 7vw, 100px); align-items: center; padding: 76px 0 92px; }
-    .kicker { display: flex; align-items: center; gap: 10px; margin: 0 0 24px; color: var(--lime); font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
+    .kicker { display: flex; align-items: center; gap: 10px; margin: 0 0 24px; color: var(--lime); font-size: 14px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
     .kicker::before { width: 24px; height: 1px; background: var(--lime); content: ""; }
     h1 { max-width: 580px; margin: 0; font: 400 clamp(54px, 7.5vw, 104px)/.92 var(--serif); letter-spacing: -.055em; }
     h1 em { color: var(--lime); font-weight: 400; }
-    .hero-copy { max-width: 440px; margin: 25px 0 0; color: var(--muted); font-size: 16px; line-height: 1.8; }
+    .hero-copy { max-width: 470px; margin: 25px 0 0; color: var(--muted); font-size: 18px; line-height: 1.8; }
     .hero-copy strong { color: var(--ink); font-weight: 550; }
     .actions { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 30px; }
-    .button { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: 10px; padding: 0 19px; border: 1px solid var(--line); border-radius: 999px; color: var(--ink); text-decoration: none; font-size: 13px; font-weight: 650; transition: transform .2s, background .2s, border-color .2s; }
+    .button { display: inline-flex; min-height: 52px; align-items: center; justify-content: center; gap: 10px; padding: 0 21px; border: 1px solid var(--line); border-radius: 999px; color: var(--ink); text-decoration: none; font-size: 15px; font-weight: 650; transition: transform .2s, background .2s, border-color .2s; }
     .button:hover { transform: translateY(-2px); border-color: #777153; }
     .button.primary { border-color: var(--lime); background: var(--lime); color: #202116; }
     .button.primary:hover { background: #e3eea4; }
-    .hero-note { display: flex; align-items: center; gap: 10px; margin-top: 34px; color: var(--dim); font-size: 11px; }
+    .hero-note { display: flex; align-items: center; gap: 10px; margin-top: 34px; color: var(--dim); font-size: 13px; }
     .hero-note span { color: var(--orange); font-size: 17px; }
     .feature { position: relative; min-width: 0; padding: 13px; border: 1px solid #4a483c; background: #24231e; transform: rotate(1deg); }
     .feature::before { position: absolute; z-index: -1; inset: 15px -15px -15px 15px; border: 1px solid #39382f; content: ""; }
     .feature img { display: block; width: 100%; max-height: 600px; aspect-ratio: 1.06 / 1; object-fit: cover; background: #111; }
     .feature-caption { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 15px 6px 3px; }
     .feature-caption strong { font: 18px var(--serif); font-weight: 400; }
-    .feature-caption span { color: var(--muted); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+    .feature-caption span { color: var(--muted); font-size: 14px; letter-spacing: .1em; text-transform: uppercase; }
 
     .section { padding: 76px 0; border-top: 1px solid var(--line); }
     .section-top { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 30px; }
     .section-top .kicker { margin-bottom: 12px; }
     h2 { margin: 0; font: 400 clamp(36px, 5vw, 58px)/1 var(--serif); letter-spacing: -.035em; }
-    .section-intro { max-width: 370px; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.7; }
+    .section-intro { max-width: 390px; margin: 0; color: var(--muted); font-size: 16px; line-height: 1.7; }
     .gallery { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; }
     .art-card { position: relative; grid-column: span 4; overflow: hidden; min-width: 0; padding: 0; border: 1px solid var(--line); background: var(--panel); color: var(--ink); text-align: left; cursor: zoom-in; }
     .art-card:first-child, .art-card:nth-child(4) { grid-column: span 5; }
@@ -69,11 +70,11 @@
     .art-card:hover img { transform: scale(1.035); }
     .art-caption { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 15px 16px; }
     .art-caption strong { font: 17px var(--serif); font-weight: 400; }
-    .art-caption span { color: var(--dim); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+    .art-caption span { color: var(--dim); font-size: 14px; letter-spacing: .1em; text-transform: uppercase; }
 
     .statement { display: grid; grid-template-columns: .8fr 1.2fr; gap: 60px; align-items: start; }
     .statement h2 { max-width: 410px; }
-    .statement-copy { max-width: 650px; color: var(--muted); font: 19px/1.8 var(--serif); }
+    .statement-copy { max-width: 650px; color: var(--muted); font: 21px/1.8 var(--serif); }
     .statement-copy p { margin: 0 0 17px; }
     .statement-copy strong { color: var(--ink); font-weight: 400; }
     .statement-copy .wife { color: var(--orange); }
@@ -81,19 +82,19 @@
     .support { position: relative; display: grid; grid-template-columns: 1fr auto; gap: 28px; align-items: center; overflow: hidden; padding: clamp(28px, 5vw, 58px); border: 1px solid #61583d; background: radial-gradient(ellipse at 90% 0%, rgba(213, 226, 138, .12), transparent 50%), #22221d; }
     .support .kicker { margin-bottom: 16px; }
     .support h2 { max-width: 650px; }
-    .support p { max-width: 590px; margin: 15px 0 0; color: var(--muted); font-size: 14px; line-height: 1.8; }
+    .support p { max-width: 620px; margin: 15px 0 0; color: var(--muted); font-size: 16px; line-height: 1.8; }
     .zap { display: grid; place-items: center; width: 104px; height: 104px; border: 1px solid #746c48; border-radius: 50%; color: var(--lime); font-size: 39px; text-decoration: none; transition: transform .2s, background .2s; }
     .zap:hover { transform: rotate(-10deg) scale(1.05); background: rgba(214, 226, 138, .09); }
 
     .social-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 25px; }
-    .social-row a { padding: 11px 15px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font-size: 12px; text-decoration: none; }
+    .social-row a { padding: 12px 16px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font-size: 14px; text-decoration: none; }
     .social-row a:hover { border-color: #777153; color: var(--lime); }
-    footer { display: flex; justify-content: space-between; gap: 20px; padding: 30px 0 38px; border-top: 1px solid var(--line); color: var(--dim); font-size: 11px; }
+    footer { display: flex; justify-content: space-between; gap: 20px; padding: 30px 0 38px; border-top: 1px solid var(--line); color: var(--dim); font-size: 14px; }
     footer a { color: var(--muted); text-decoration: none; }
     dialog { width: min(94vw, 1100px); max-width: none; max-height: 92vh; padding: 12px; border: 1px solid var(--line); background: #1b1b17; color: var(--ink); }
     dialog::backdrop { background: rgba(0, 0, 0, .86); backdrop-filter: blur(6px); }
     dialog img { display: block; max-width: 100%; max-height: calc(92vh - 70px); margin: auto; object-fit: contain; }
-    .dialog-bar { display: flex; justify-content: space-between; align-items: center; padding: 11px 4px 0; color: var(--muted); font-size: 12px; }
+    .dialog-bar { display: flex; justify-content: space-between; align-items: center; padding: 11px 4px 0; color: var(--muted); font-size: 14px; }
     .dialog-bar button { border: 0; background: none; color: var(--ink); font: inherit; cursor: pointer; }
     a:focus-visible, button:focus-visible { outline: 3px solid var(--lime); outline-offset: 4px; }
     @media (max-width: 800px) {
@@ -110,13 +111,13 @@
     }
     @media (max-width: 520px) {
       .shell { width: calc(100% - 32px); }
-      .wordmark strong { font-size: 16px; }
-      .nav .nav-cta { padding: 9px 12px; font-size: 11px; }
+      .wordmark strong { font-size: 18px; }
+      .nav .nav-cta { padding: 9px 12px; font-size: 13px; }
       .hero { padding-top: 48px; }
       h1 { font-size: clamp(54px, 16vw, 76px); }
-      .hero-copy { font-size: 15px; }
+      .hero-copy { font-size: 17px; }
       .section-top { align-items: start; flex-direction: column; }
-      .section-intro { font-size: 13px; }
+      .section-intro { font-size: 15px; }
       .gallery { gap: 10px; }
       .art-card, .art-card:first-child, .art-card:nth-child(2), .art-card:nth-child(4), .art-card:nth-child(5) { grid-column: span 12; }
       .art-card img { aspect-ratio: 1.35 / 1; }
@@ -145,7 +146,7 @@
         <h1 id="hero-title">A little color for <em>every day.</em></h1>
         <p class="hero-copy">I’m Zack Covell. I make a new piece of digital art every day—<strong>bold, curious work made to live beyond the screen.</strong> Find a favorite, take a print home, or follow along wherever you are.</p>
         <div class="actions">
-          <a class="button primary" href="#gallery">Explore the gallery <span aria-hidden="true">↓</span></a>
+          <a class="button primary" href="#gallery">Browse the artwork <span aria-hidden="true">↓</span></a>
           <a class="button" href="https://silverlenz.github.io/Support-the-Daily-Transmissions/" target="_blank" rel="noopener noreferrer">Get a print <span aria-hidden="true">↗</span></a>
         </div>
         <div class="hero-note"><span aria-hidden="true">✳</span> Art prints from $5–50 · New work daily</div>
@@ -162,13 +163,13 @@
         <p class="section-intro">A few recent favorites from the ongoing collection. Select any piece to take a closer look.</p>
       </div>
       <div class="gallery">
-        <button class="art-card" data-full="assets/gallery/8209c914_original.jpg" data-title="Venus Flowered"><img src="assets/gallery/8209c914.jpg" alt="Venus Flowered, vivid overlapping geometric forms" loading="lazy"><span class="art-caption"><strong>Venus Flowered</strong><span>View artwork ↗</span></span></button>
-        <button class="art-card" data-full="assets/gallery/ad25e250_original.jpg" data-title="Daily digital artwork"><img src="assets/gallery/ad25e250.jpg" alt="Daily digital artwork in a warm, expressive palette" loading="lazy"><span class="art-caption"><strong>Daily study No. 02</strong><span>View artwork ↗</span></span></button>
-        <button class="art-card" data-full="assets/gallery/c8ea908b_original.jpg" data-title="Daily digital artwork"><img src="assets/gallery/c8ea908b.jpg" alt="Colorful digital composition from Zack's daily art practice" loading="lazy"><span class="art-caption"><strong>Daily study No. 03</strong><span>View artwork ↗</span></span></button>
-        <button class="art-card" data-full="assets/gallery/7702e67b_original.jpg" data-title="Daily digital artwork"><img src="assets/gallery/7702e67b.jpg" alt="A richly colored abstract digital artwork" loading="lazy"><span class="art-caption"><strong>Daily study No. 04</strong><span>View artwork ↗</span></span></button>
-        <button class="art-card" data-full="assets/gallery/88d7328a_original.jpg" data-title="Daily digital artwork"><img src="assets/gallery/88d7328a.jpg" alt="A vivid, layered digital artwork from the daily collection" loading="lazy"><span class="art-caption"><strong>Daily study No. 05</strong><span>View artwork ↗</span></span></button>
-        <button class="art-card" data-full="assets/gallery/b92e6d9c_original.jpg" data-title="Daily digital artwork"><img src="assets/gallery/b92e6d9c.jpg" alt="Expressive digital art with a painterly palette" loading="lazy"><span class="art-caption"><strong>Daily study No. 06</strong><span>View artwork ↗</span></span></button>
-        <button class="art-card" data-full="assets/gallery/b3de7a96_original.jpg" data-title="Daily digital artwork"><img src="assets/gallery/b3de7a96.jpg" alt="A colorful digital artwork by Zack Covell" loading="lazy"><span class="art-caption"><strong>Daily study No. 07</strong><span>View artwork ↗</span></span></button>
+        <button class="art-card" data-full="assets/gallery/8209c914_original.jpg" data-title="Venus Flowered"><img src="assets/gallery/8209c914.jpg" alt="Venus Flowered, vivid overlapping geometric forms"><span class="art-caption"><strong>Venus Flowered</strong><span>View artwork ↗</span></span></button>
+        <button class="art-card" data-full="assets/gallery/ad25e250_original.jpg" data-title="Daily digital artwork"><img src="assets/gallery/ad25e250.jpg" alt="Daily digital artwork in a warm, expressive palette"><span class="art-caption"><strong>Daily study No. 02</strong><span>View artwork ↗</span></span></button>
+        <button class="art-card" data-full="assets/gallery/c8ea908b_original.jpg" data-title="Daily digital artwork"><img src="assets/gallery/c8ea908b.jpg" alt="Colorful digital composition from Zack's daily art practice"><span class="art-caption"><strong>Daily study No. 03</strong><span>View artwork ↗</span></span></button>
+        <button class="art-card" data-full="assets/gallery/7702e67b_original.jpg" data-title="Daily digital artwork"><img src="assets/gallery/7702e67b.jpg" alt="A richly colored abstract digital artwork"><span class="art-caption"><strong>Daily study No. 04</strong><span>View artwork ↗</span></span></button>
+        <button class="art-card" data-full="assets/gallery/88d7328a_original.jpg" data-title="Daily digital artwork"><img src="assets/gallery/88d7328a.jpg" alt="A vivid, layered digital artwork from the daily collection"><span class="art-caption"><strong>Daily study No. 05</strong><span>View artwork ↗</span></span></button>
+        <button class="art-card" data-full="assets/gallery/b92e6d9c_original.jpg" data-title="Daily digital artwork"><img src="assets/gallery/b92e6d9c.jpg" alt="Expressive digital art with a painterly palette"><span class="art-caption"><strong>Daily study No. 06</strong><span>View artwork ↗</span></span></button>
+        <button class="art-card" data-full="assets/gallery/b3de7a96_original.jpg" data-title="Daily digital artwork"><img src="assets/gallery/b3de7a96.jpg" alt="A colorful digital artwork by Zack Covell"><span class="art-caption"><strong>Daily study No. 07</strong><span>View artwork ↗</span></span></button>
       </div>
     </section>
 
@@ -186,7 +187,7 @@
         <div><p class="kicker">Keep the daily art going</p><h2 id="support-title">If it resonates, send a little spark.</h2><p>Enjoying the work? Support the daily transmissions—or follow along and share a piece with someone who might love it.</p><div class="actions"><a class="button primary" href="https://silverlenz.github.io/Support-the-Daily-Transmissions/" target="_blank" rel="noopener noreferrer">Support the art <span aria-hidden="true">↗</span></a><a class="button" href="https://silverlenz.github.io/zack-zaps/" target="_blank" rel="noopener noreferrer">Zap &amp; follow on Nostr <span aria-hidden="true">↗</span></a></div></div>
         <a class="zap" href="https://silverlenz.github.io/Support-the-Daily-Transmissions/" target="_blank" rel="noopener noreferrer" aria-label="Support the daily art">ϟ</a>
       </div>
-      <div class="social-row" aria-label="Follow Zack"><a href="https://x.com/zackcovell" target="_blank" rel="noopener noreferrer">X / Twitter ↗</a><a href="https://bsky.app/profile/silverlenz.bsky.social" target="_blank" rel="noopener noreferrer">Bluesky ↗</a><a href="https://mastodon.social/@silverlenz" target="_blank" rel="noopener noreferrer">Mastodon ↗</a><a href="https://www.instagram.com/zacovell" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="https://primal.net/p/nprofile1qqsqvrldzh7pcafe69knhu8lwk5l9g8uk8dyuea8l6z95t5q667h0egw4nc7y" target="_blank" rel="noopener noreferrer">Nostr ↗</a><a href="https://www.tumblr.com/silverlenz" target="_blank" rel="noopener noreferrer">Tumblr ↗</a><a href="https://www.facebook.com/covellz/" target="_blank" rel="noopener noreferrer">Facebook ↗</a><a href="https://www.linkedin.com/in/covellz/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://www.threads.com/@zacovell" target="_blank" rel="noopener noreferrer">Threads ↗</a><a href="https://pixelfed.social/silverlenz" target="_blank" rel="noopener noreferrer">Pixelfed ↗</a><a href="https://www.deviantart.com/zackcovell" target="_blank" rel="noopener noreferrer">DeviantArt ↗</a></div>
+      <div class="social-row" aria-label="Follow Zack"><a href="https://x.com/zackcovell" target="_blank" rel="noopener noreferrer">X / Twitter ↗</a><a href="https://bsky.app/profile/silverlenz.bsky.social" target="_blank" rel="noopener noreferrer">Bluesky ↗</a><a href="https://mastodon.social/@silverlenz" target="_blank" rel="noopener noreferrer">Mastodon ↗</a><a href="https://www.instagram.com/zacovell" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="https://primal.net/p/nprofile1qqsqvrldzh7pcafe69knhu8lwk5l9g8uk8dyuea8l6z95t5q667h0egw4nc7y" target="_blank" rel="noopener noreferrer">Nostr ↗</a><a href="https://www.tumblr.com/silverlenz" target="_blank" rel="noopener noreferrer">Tumblr ↗</a><a href="https://www.facebook.com/covellz/" target="_blank" rel="noopener noreferrer">Facebook ↗</a><a href="https://www.linkedin.com/in/covellz/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://www.threads.com/@zacovell" target="_blank" rel="noopener noreferrer">Threads ↗</a><a href="https://pixelfed.social/silverlenz" target="_blank" rel="noopener noreferrer">Pixelfed ↗</a></div>
     </section>
   </main>
   <footer class="shell"><span>© <span id="year"></span> Zack Covell · A new piece every day.</span><a href="https://silverlenz.carrd.co/#privacy" target="_blank" rel="noopener noreferrer">Privacy policy ↗</a></footer>
