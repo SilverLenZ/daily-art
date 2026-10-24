@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#171713">
   <meta name="description" content="Daily digital art by Zack Covell exploring sacred geometry, visionary symbols, music, myth, and the patterns that connect them.">
+  <script>
+    (() => {
+      const navigation = performance.getEntriesByType("navigation")[0];
+      if (navigation?.type === "navigate" && !location.hash) {
+        window.addEventListener("pageshow", () => {
+          if (!location.hash) window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+        }, { once: true });
+      }
+    })();
+  </script>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="alternate icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
