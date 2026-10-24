@@ -204,7 +204,7 @@
     const galleryStatus = document.querySelector('#gallery-status');
     const loadMore = document.querySelector('#load-more');
     const pageSize = 24;
-    const artworkTitles = { 171: 'Numbered Mandala' };
+    let artworkTitles = {};
     let archive = [];
     let visibleCount = 0;
 
@@ -232,7 +232,7 @@
       const next = archive.slice(visibleCount, visibleCount + pageSize);
       for (const item of next) {
         const number = String(item.archiveIndex).padStart(3, '0');
-        const artTitle = artworkTitles[item.archiveIndex] || 'Archive piece';
+        const artTitle = artworkTitles[item.archiveIndex]?.title || 'Archive piece';
         const displayTitle = `${artTitle} · ${number}`;
         const card = document.createElement('button');
         card.className = 'art-card';
@@ -267,9 +267,13 @@
     }
     async function loadArchive() {
       try {
-        const response = await fetch('assets/artworks/index.json');
+        const [response, titlesResponse] = await Promise.all([
+          fetch('assets/artworks/index.json'),
+          fetch('assets/artworks/titles.json').catch(() => null)
+        ]);
         if (!response.ok) throw new Error(`Archive request failed: ${response.status}`);
         const items = await response.json();
+        if (titlesResponse?.ok) artworkTitles = await titlesResponse.json();
         archive = shuffle(items, seededRandom(dailySeed()));
         renderMore();
       } catch (error) {
