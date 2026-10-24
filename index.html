@@ -204,6 +204,7 @@
     const galleryStatus = document.querySelector('#gallery-status');
     const loadMore = document.querySelector('#load-more');
     const pageSize = 24;
+    const artworkTitles = { 171: 'Numbered Mandala' };
     let archive = [];
     let visibleCount = 0;
 
@@ -231,20 +232,22 @@
       const next = archive.slice(visibleCount, visibleCount + pageSize);
       for (const item of next) {
         const number = String(item.archiveIndex).padStart(3, '0');
+        const artTitle = artworkTitles[item.archiveIndex] || 'Archive piece';
+        const displayTitle = `${artTitle} · ${number}`;
         const card = document.createElement('button');
         card.className = 'art-card';
         card.type = 'button';
         card.dataset.full = item.full;
-        card.dataset.title = `Archive piece ${number}`;
-        card.setAttribute('aria-label', `View artwork ${number} from the daily archive`);
+        card.dataset.title = displayTitle;
+        card.setAttribute('aria-label', `View ${displayTitle}`);
         const image = document.createElement('img');
         image.src = item.thumb;
-        image.alt = `Artwork ${number} from Zack Covell’s daily archive`;
+        image.alt = `${displayTitle}, digital artwork by Zack Covell`;
         image.loading = 'lazy';
         const caption = document.createElement('span');
         caption.className = 'art-caption';
         const title = document.createElement('strong');
-        title.textContent = `Archive piece ${number}`;
+        title.textContent = displayTitle;
         const action = document.createElement('span');
         action.textContent = 'View artwork ↗';
         caption.append(title, action);
