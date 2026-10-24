@@ -87,6 +87,11 @@
     .statement-copy p { margin: 0 0 17px; }
     .statement-copy strong { color: var(--ink); font-weight: 400; }
     .statement-copy .wife { color: var(--orange); }
+    .artist-glimpse { display: inline-flex; align-items: center; gap: 13px; margin-top: 24px; color: var(--muted); text-decoration: none; }
+    .artist-glimpse img { display: block; width: 88px; height: 88px; border: 1px solid rgb(214 226 138 / 38%); border-radius: 50%; object-fit: cover; object-position: 78% 24%; opacity: .4; filter: saturate(.72); transition: opacity .25s, filter .25s, transform .25s; }
+    .artist-glimpse:hover img, .artist-glimpse:focus-visible img { opacity: .94; filter: saturate(1); transform: scale(1.04); }
+    .artist-glimpse strong { display: block; color: var(--ink); font: 17px var(--serif); font-weight: 400; }
+    .artist-glimpse small { display: block; margin-top: 4px; color: var(--muted); font-size: 12px; }
 
     .support { position: relative; display: grid; grid-template-columns: 1fr auto; gap: 28px; align-items: center; overflow: hidden; padding: clamp(28px, 5vw, 58px); border: 1px solid #61583d; background: radial-gradient(ellipse at 90% 0%, rgba(213, 226, 138, .12), transparent 50%), #22221d; }
     .support .kicker { margin-bottom: 16px; }
@@ -117,6 +122,7 @@
       .section { padding: 60px 0; }
       .art-card { grid-column: span 6; }
       .statement { grid-template-columns: 1fr; gap: 24px; }
+      .artist-glimpse { margin-top: 18px; }
     }
     @media (max-width: 520px) {
       .shell { width: calc(100% - 32px); }
@@ -181,7 +187,14 @@
     </section>
 
     <section class="section shell statement" id="about" aria-labelledby="about-title">
-      <div><p class="kicker">The practice</p><h2 id="about-title">The pattern is visible. The message is structural.</h2></div>
+      <div>
+        <p class="kicker">The practice</p>
+        <h2 id="about-title">The pattern is visible. The message is structural.</h2>
+        <a class="artist-glimpse" href="assets/portraits/zack.webp" target="_blank" rel="noopener noreferrer" aria-label="Open a portrait of Zack Covell">
+          <img src="assets/portraits/zack.webp" alt="Portrait of Zack Covell">
+          <span><strong>Meet Zack</strong><small>The person behind the patterns ↗</small></span>
+        </a>
+      </div>
       <div class="statement-copy">
         <p>A line meets a circle. A rhythm resolves into a pattern. I follow these forms through sacred geometry, music, myth, and the natural world—different ways of approaching the same quiet mystery.</p>
         <p>Some works are precise and diagrammatic; others open into color, symbol, and dream. Each one begins with something that catches my attention and asks to be followed farther. <strong>Trace the lines inward. Stay with what resonates.</strong></p>
