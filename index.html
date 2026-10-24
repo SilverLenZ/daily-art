@@ -179,8 +179,8 @@
         <div class="hero-note"><span aria-hidden="true">✳</span> A new art transmission every four hours · Prints $5–50</div>
       </div>
       <figure class="feature">
-        <img src="assets/artworks/full/4891584888101.webp" alt="A moonlit landscape with a waterfall, lion, and glowing forest fire, from archive piece 243">
-        <figcaption class="feature-caption"><strong>From the archive</strong><span>Piece 243 · A vision in the firelight</span></figcaption>
+        <img src="assets/gallery/8209c914.jpg" alt="Venus Flowered, a colorful geometric digital artwork by Zack Covell">
+        <figcaption class="feature-caption"><strong>Venus Flowered</strong><span>A meditation in form and color</span></figcaption>
       </figure>
     </section>
 
@@ -229,6 +229,7 @@
     const galleryStatus = document.querySelector('#gallery-status');
     const loadMore = document.querySelector('#load-more');
     const pageSize = 24;
+    const openingSelection = [9, 10, 15, 20, 24, 27, 29, 35, 40, 43, 46, 51, 54, 58, 68, 81, 85, 86, 91, 95, 126, 132, 157, 163];
     let artworkTitles = {};
     let archive = [];
     let visibleCount = 0;
@@ -299,7 +300,10 @@
         if (!response.ok) throw new Error(`Archive request failed: ${response.status}`);
         const items = await response.json();
         if (titlesResponse?.ok) artworkTitles = await titlesResponse.json();
-        archive = shuffle(items, seededRandom(dailySeed()));
+        const openingSet = new Set(openingSelection);
+        const selected = openingSelection.map(index => items.find(item => item.archiveIndex === index)).filter(Boolean);
+        const remaining = shuffle(items.filter(item => !openingSet.has(item.archiveIndex)), seededRandom(dailySeed()));
+        archive = [...selected, ...remaining];
         renderMore();
       } catch (error) {
         galleryStatus.textContent = 'The archive could not be loaded. Please refresh to try again.';
